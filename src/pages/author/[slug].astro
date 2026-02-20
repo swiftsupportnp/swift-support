@@ -1,0 +1,147 @@
+---
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { client } from "../../lib/sanity";
+import {
+    AUTHOR_BY_SLUG_QUERY,
+    POSTS_BY_AUTHOR_QUERY,
+    ALL_AUTHOR_SLUGS_QUERY,
+} from "../../lib/queries";
+
+export async function getStaticPaths() {
+    const authors = await client.fetch(ALL_AUTHOR_SLUGS_QUERY);
+    return authors.map((a: { slug: string }) => ({ params: { slug: a.slug } }));
+}
+
+const { slug } = Astro.params;
+const author = await client.fetch(AUTHOR_BY_SLUG_QUERY, { slug });
+const posts = await client.fetch(POSTS_BY_AUTHOR_QUERY, { slug });
+
+if (!author) {
+    return Astro.redirect("/blog");
+}
+
+const displayName =
+    author.name === "Swift Support Team" || slug === "swift-support-team"
+        ? "Swift Support Team"
+        : author.name;
+---
+
+<BaseLayout
+    title={`${displayName} | Author`}
+    description={`Articles and insights authored by ${displayName} at Swift Support Solutions.`}
+>
+    <!-- Hero Section -->
+    <header class="bg-slate-50 border-b border-slate-100 py-16 sm:py-24">
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center">
+                {
+                    author.image?.asset?.url ? (
+                        <img
+                            src={
+                                author.image.asset.url + "?w=200&h=200&fit=crop"
+                            }
+                            alt={displayName}
+                            class="w-24 h-24 rounded-full mx-auto mb-6 shadow-md border-4 border-white"
+                        />
+                    ) : (
+                        <div class="w-24 h-24 rounded-full bg-brand-100 flex items-center justify-center text-3xl font-bold text-brand-700 mx-auto mb-6 shadow-md border-4 border-white">
+                            {displayName[0]}
+                        </div>
+                    )
+                }
+                <h1 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-4">
+                    {displayName}
+                </h1>
+                {
+                    author.role && (
+                        <p class="text-brand-600 font-medium mb-6">
+                            {author.role}
+                        </p>
+                    )
+                }
+                {
+                    author.bio && (
+                        <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
+                            {author.bio}
+                        </p>
+                    )
+                }
+            </div>
+        </div>
+    </header>
+
+    <!-- Posts Section -->
+    <section class="py-16 sm:py-24">
+        <div class="container">
+            <h2 class="text-2xl font-bold text-slate-900 mb-10">
+                Latest Articles
+            </h2>
+
+            {
+                posts.length > 0 ? (
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                        {posts.map((post: any) => (
+                            <article class="card group overflow-hidden flex flex-col h-full">
+                                <a
+                                    href={`/blog/${post.slug.current}`}
+                                    class="block overflow-hidden aspect-video"
+                                >
+                                    {post.mainImage?.asset?.url ? (
+                                        <img
+                                            src={
+                                                post.mainImage.asset.url +
+                                                "?w=600&h=400&fit=crop"
+                                            }
+                                            alt={post.title}
+                                            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    ) : (
+                                        <div class="w-full h-full bg-slate-100 flex items-center justify-center text-slate-400">
+                                            No Image
+                                        </div>
+                                    )}
+                                </a>
+                                <div class="p-6 flex-grow flex flex-col">
+                                    <div class="flex items-center gap-3 mb-3">
+                                        {post.categories?.map((cat: any) => (
+                                            <span class="text-[10px] font-bold uppercase tracking-wider text-brand-600 px-2 py-0.5 bg-brand-50 rounded">
+                                                {cat.title}
+                                            </span>
+                                        ))}
+                                    </div>
+                                    <h3 class="text-xl font-bold text-slate-900 mb-3 group-hover:text-brand-700 transition-colors">
+                                        <a href={`/blog/${post.slug.current}`}>
+                                            {post.title}
+                                        </a>
+                                    </h3>
+                                    <p class="text-slate-500 text-sm mb-6 line-clamp-2">
+                                        {post.excerpt}
+                                    </p>
+                                    <div class="mt-auto pt-4 border-t border-slate-50 flex items-center justify-between text-xs text-slate-400">
+                                        <span>
+                                            {new Date(
+                                                post.publishedAt,
+                                            ).toLocaleDateString("en-US", {
+                                                month: "long",
+                                                day: "numeric",
+                                                year: "numeric",
+                                            })}
+                                        </span>
+                                        <span>{post.readingTime} min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        ))}
+                    </div>
+                ) : (
+                    <div class="text-center py-20 bg-slate-50 rounded-3xl border border-dashed border-slate-200">
+                        <p class="text-slate-500 italic">
+                            No articles found from this author yet.
+                        </p>
+                    </div>
+                )
+            }
+        </div>
+    </section>
+</BaseLayout>

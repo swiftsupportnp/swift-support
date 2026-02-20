@@ -53,6 +53,7 @@ const toc =
     title={seoTitle}
     description={seoDescription}
     image={seoImage}
+    preloadImage={seoImage}
     type="article"
     canonicalUrl={post.seo?.canonicalUrl || Astro.url.href}
 >
@@ -166,9 +167,14 @@ const toc =
                                         itemscope
                                         itemtype="https://schema.org/Person"
                                     >
-                                        <span itemprop="name">
-                                            {post.author.name}
-                                        </span>
+                                        <a
+                                            href="/author/swift-support-team"
+                                            class="hover:text-brand-700 transition-colors"
+                                        >
+                                            <span itemprop="name">
+                                                Swift Support Team
+                                            </span>
+                                        </a>
                                     </span>
                                 </div>
                             )
@@ -250,7 +256,12 @@ const toc =
                                 </div>
                                 <div>
                                     <h3 class="font-semibold text-slate-900">
-                                        {post.author.name}
+                                        <a
+                                            href="/author/swift-support-team"
+                                            class="hover:text-brand-700 transition-colors"
+                                        >
+                                            Swift Support Team
+                                        </a>
                                     </h3>
                                     {post.author.role && (
                                         <p class="text-xs text-brand-600 mb-1.5">

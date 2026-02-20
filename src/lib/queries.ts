@@ -87,3 +87,22 @@ export const ALL_CLIENT_LOGOS_QUERY = `
     name, "imageUrl": image.asset->url
   }
 `;
+
+export const AUTHOR_BY_SLUG_QUERY = `
+  *[_type == "author" && slug.current == $slug][0] {
+    name, role, bio,
+    image { asset-> { url } }
+  }
+`;
+
+export const POSTS_BY_AUTHOR_QUERY = `
+  *[_type == "post" && author->slug.current == $slug] | order(publishedAt desc) {
+    _id, title, slug, excerpt, publishedAt, readingTime,
+    mainImage { asset-> { url, metadata { lqip } }, alt },
+    categories[]-> { title, slug }
+  }
+`;
+
+export const ALL_AUTHOR_SLUGS_QUERY = `
+  *[_type == "author"]{ "slug": slug.current }
+`;
