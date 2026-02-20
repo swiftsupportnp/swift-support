@@ -4,6 +4,7 @@ export const SITE_SETTINGS_QUERY = `
   *[_type == "siteSettings"][0]{
     title, tagline, description, email, phone, address,
     logo { asset-> { url } },
+    favicon { asset-> { url } },
     socialLinks, navLinks, footerText,
     googleAnalyticsId, googleSearchConsoleKey, openingHours, priceRange, latitude, longitude
   }

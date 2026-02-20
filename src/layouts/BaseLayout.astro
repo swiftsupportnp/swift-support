@@ -41,6 +41,17 @@ const logoUrl = settings?.logo?.asset?.url;
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="generator" content={Astro.generator} />
 
+    <!-- Favicon -->
+    <link
+      rel="icon"
+      type="image/png"
+      href={settings?.favicon?.asset?.url || "/assets/logo.png"}
+    />
+    <link
+      rel="apple-touch-icon"
+      href={settings?.favicon?.asset?.url || "/assets/logo.png"}
+    />
+
     {
       settings?.googleSearchConsoleKey && (
         <meta

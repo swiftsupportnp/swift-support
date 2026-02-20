@@ -31,6 +31,15 @@ export const structure = (S: StructureBuilder) =>
                 .title('Categories')
                 .schemaType('category')
                 .child(S.documentTypeList('category').title('Categories')),
+            S.divider(),
+            S.listItem()
+                .title('Testimonials')
+                .schemaType('testimonial')
+                .child(S.documentTypeList('testimonial').title('Testimonials')),
+            S.listItem()
+                .title('Client Logos')
+                .schemaType('clientLogo')
+                .child(S.documentTypeList('clientLogo').title('Client Logos')),
         ]);
 
 export const defaultDocumentNode = (S: StructureBuilder) =>

@@ -29,6 +29,12 @@ export default defineType({
             options: { hotspot: true },
         }),
         defineField({
+            name: 'favicon',
+            title: 'Favicon',
+            type: 'image',
+            description: 'Upload a 32x32 or 64x64 PNG/ICO for the site favicon.',
+        }),
+        defineField({
             name: 'email',
             title: 'Contact Email',
             type: 'string',
