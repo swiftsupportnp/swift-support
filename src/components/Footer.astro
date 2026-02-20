@@ -1,13 +1,8 @@
 ---
 import { client } from "../lib/sanity";
+import { SITE_SETTINGS_QUERY } from "../lib/queries";
 
-const settings = await client
-    .fetch(
-        `*[_type == "siteSettings"][0]{
-  title, email, phone, address, socialLinks, footerText, logo { asset->{url} }
-}`,
-    )
-    .catch(() => null);
+const settings = await client.fetch(SITE_SETTINGS_QUERY).catch(() => null);
 
 const services = [
     { label: "Business Consultation", href: "/services/business-consultation" },

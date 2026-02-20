@@ -1,13 +1,8 @@
 ---
 import { client } from "../lib/sanity";
+import { SITE_SETTINGS_QUERY } from "../lib/queries";
 
-const settings = await client
-    .fetch(
-        `*[_type == "siteSettings"][0]{
-  title, navLinks, logo { asset->{url} }
-}`,
-    )
-    .catch(() => null);
+const settings = await client.fetch(SITE_SETTINGS_QUERY).catch(() => null);
 
 const navLinks = settings?.navLinks ?? [
     { label: "Home", href: "/" },
@@ -28,11 +23,15 @@ const currentPath = Astro.url.pathname;
         <div class="flex items-center justify-between h-16">
             <!-- Logo -->
             <a href="/" class="flex items-center space-x-3 group z-50 relative">
-                <img
-                    src={logoSrc}
-                    alt="Swift Support Solutions Logo"
-                    class="h-10 sm:h-12 w-auto"
-                />
+                <div
+                    class="bg-slate-50 rounded-lg p-1 transition-colors group-hover:bg-slate-100"
+                >
+                    <img
+                        src={logoSrc}
+                        alt="Swift Support Solutions Logo"
+                        class="h-10 sm:h-12 w-auto"
+                    />
+                </div>
                 <span
                     class="text-sm sm:text-xl font-bold text-slate-900 tracking-tight"
                 >
