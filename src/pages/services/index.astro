@@ -1,0 +1,142 @@
+---
+export const prerender = true;
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { client } from "../../lib/sanity";
+import { ALL_SERVICES_QUERY } from "../../lib/queries";
+import ServiceCard from "../../components/ServiceCard.astro";
+
+const services = await client.fetch(ALL_SERVICES_QUERY).catch(() => []);
+
+const fallback = [
+    {
+        title: "Business Consultation",
+        slug: { current: "business-consultation" },
+        tagline:
+            "Strategic guidance to start, scale, and sustain your business",
+    },
+    {
+        title: "Business Research",
+        slug: { current: "business-research" },
+        tagline:
+            "Data-driven insights and market analysis for informed decisions",
+    },
+    {
+        title: "Assets Management",
+        slug: { current: "assets-management" },
+        tagline:
+            "Optimize and protect your company’s physical and digital assets",
+    },
+    {
+        title: "Accounting & Bookkeeping",
+        slug: { current: "accounting-bookkeeping" },
+        tagline: "Accurate records and NFRS-compliant financial statements",
+    },
+    {
+        title: "TAX, VAT & Audit Support",
+        slug: { current: "tax-vat-audit" },
+        tagline: "IRD-registered tax and VAT filing with full compliance",
+    },
+    {
+        title: "Business Registration",
+        slug: { current: "business-registration" },
+        tagline: "End-to-end company registration and legal compliance",
+    },
+    {
+        title: "Marketing & Branding",
+        slug: { current: "marketing-branding" },
+        tagline: "Build a compelling brand and expand your market presence",
+    },
+    {
+        title: "Project Management",
+        slug: { current: "project-management" },
+        tagline: "Structured execution to deliver projects on time and budget",
+    },
+    {
+        title: "Website Development",
+        slug: { current: "website-development" },
+        tagline: "Custom websites and web applications tailored to your needs",
+    },
+];
+
+const displayServices = services.length > 0 ? services.slice(0, 9) : fallback;
+---
+
+<BaseLayout
+    title="Our Services"
+    description="Explore Swift Support Solutions' complete range of business consulting services - from company registration and accounting to marketing, events management, and business development in Nepal."
+>
+    <!-- Page Header -->
+    <section class="bg-slate-900 text-white">
+        <div class="container py-16 lg:py-20">
+            <div class="max-w-2xl">
+                <div
+                    class="inline-flex items-center px-3 py-1 rounded-full bg-amber-500/10 text-amber-300 text-xs font-medium mb-4 border border-amber-500/20"
+                >
+                    Our Services
+                </div>
+                <h1 class="text-4xl lg:text-5xl font-bold mb-4">
+                    Comprehensive Business Support Services
+                </h1>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    From company registration to growth strategy - Swift Support
+                    Solutions provides 9 core service areas designed for Nepal's
+                    business environment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-16 bg-white">
+        <div class="container">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                {
+                    displayServices.map((service: any) => (
+                        <ServiceCard
+                            title={service.title}
+                            tagline={service.tagline}
+                            slug={service.slug?.current || service.slug}
+                            iconName={service.icon}
+                            benefitCount={service.benefitCount}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Nepal Compliance Banner -->
+    <section class="bg-slate-50 border-t border-slate-100 py-12">
+        <div class="container">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-xl font-bold text-slate-900 mb-3">
+                    Nepal-Compliant Services You Can Trust
+                </h2>
+                <p class="text-sm text-slate-500 leading-relaxed">
+                    All services are delivered in compliance with applicable
+                    Nepal law including the Companies Act 2063, Income Tax Act
+                    2058, Value Added Tax Act 2052, Nepal Financial Reporting
+                    Standards (NFRS), and guidelines issued by the Inland
+                    Revenue Department (IRD) and Office of the Company Registrar
+                    (OCR).
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="bg-slate-900 py-16">
+        <div class="container text-center">
+            <h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">
+                Not Sure Which Service You Need?
+            </h2>
+            <p class="text-slate-400 mb-8 max-w-xl mx-auto text-sm">
+                Book a free 30-minute consultation and our experts will guide
+                you to the right solution.
+            </p>
+            <a href="/contact" class="btn-primary text-sm py-3.5 px-10">
+                Get a Free Consultation
+            </a>
+        </div>
+    </section>
+</BaseLayout>

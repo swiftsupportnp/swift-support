@@ -1,0 +1,102 @@
+﻿[2m20:35:16[22m [34m[content][39m Syncing content
+[2m20:35:16[22m [34m[content][39m Synced content
+[2m20:35:16[22m [34m[types][39m Generated [2m249ms[22m
+[2m20:35:16[22m [34m[build][39m output: [34m"server"[39m
+[2m20:35:16[22m [34m[build][39m mode: [34m"server"[39m
+[2m20:35:16[22m [34m[build][39m directory: [34mD:\AntiGravity Projects\Swiftin Support\dist\[39m
+[2m20:35:16[22m [34m[build][39m adapter: [32m@astrojs/vercel[39m
+[2m20:35:16[22m [34m[build][39m Collecting build info...
+[2m20:35:16[22m [34m[build][39m [32mΓ£ô Completed in 499ms.[39m
+[2m20:35:16[22m [34m[build][39m Building server entrypoints...
+[33m[1m20:35:19[22m [WARN] [router][39m getStaticPaths() ignored in dynamic page [1m/node_modules/@sanity/astro/dist/studio/studio-route.astro[22m. Add `export const prerender = true;` to prerender the page as static HTML during the build process.
+[2m20:35:21[22m [34m[vite][39m [32mΓ£ô built in 4.39s[39m
+[2m20:35:21[22m [34m[build][39m [32mΓ£ô Completed in 4.48s.[39m
+
+[42m[30m building client (vite) [39m[49m
+[2m20:35:21[22m [34m[vite][39m transforming...
+[33m[1m20:35:40[22m [WARN] [vite][39m [33msrc/sanity/structure.ts (1:9): "StructureBuilder" is not exported by "node_modules/sanity/lib/structure.js", imported by "src/sanity/structure.ts".[39m
+[2m20:36:08[22m [34m[vite][39m [32mΓ£ô[39m 2950 modules transformed.
+[2m20:36:11[22m [34m[vite][39m rendering chunks...
+[2m20:36:14[22m [34m[vite][39m computing gzip size...
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/react.zSP0710w.js                         [39m[1m[2m    0.10 kB[22m[1m[22m[2m Γöé gzip:     0.10 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/studio-component.Bz10QW-d.js              [39m[1m[2m    0.17 kB[22m[1m[22m[2m Γöé gzip:     0.14 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PostMessageTelemetry.C-DmbZlu.js          [39m[1m[2m    0.44 kB[22m[1m[22m[2m Γöé gzip:     0.33 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PostMessagePerspective.C8NZM-nU.js        [39m[1m[2m    0.58 kB[22m[1m[22m[2m Γöé gzip:     0.38 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/BroadcastDisplayedDocument.DlbEOGat.js    [39m[1m[2m    0.59 kB[22m[1m[22m[2m Γöé gzip:     0.39 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/refractor.DiA2s6Vc.js                     [39m[1m[2m    0.70 kB[22m[1m[22m[2m Γöé gzip:     0.47 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources6.BHmPcXiL.js                    [39m[1m[2m    0.73 kB[22m[1m[22m[2m Γöé gzip:     0.32 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources5.oO9iz9sO.js                    [39m[1m[2m    1.28 kB[22m[1m[22m[2m Γöé gzip:     0.59 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/DisplayedDocumentBroadcaster.CIvsBaP6.js  [39m[1m[2m    1.40 kB[22m[1m[22m[2m Γöé gzip:     0.74 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/ViteDevServerStopped.D1-8WL7w.js          [39m[1m[2m    1.64 kB[22m[1m[22m[2m Γöé gzip:     0.77 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PostMessageDocuments.BbL0mv68.js          [39m[1m[2m    1.69 kB[22m[1m[22m[2m Γöé gzip:     0.90 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PostMessagePreviewSnapshots.Bek0Ra1z.js   [39m[1m[2m    1.73 kB[22m[1m[22m[2m Γöé gzip:     0.96 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/client.CWu9C_3G.js                        [39m[1m[2m    1.74 kB[22m[1m[22m[2m Γöé gzip:     0.89 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PostMessageRefreshMutations.Ds0Ym-6t.js   [39m[1m[2m    1.84 kB[22m[1m[22m[2m Γöé gzip:     0.86 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources4.5gZJqcZm.js                    [39m[1m[2m    2.19 kB[22m[1m[22m[2m Γöé gzip:     0.80 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/index2.Bkrs20Pr.js                        [39m[1m[2m    2.41 kB[22m[1m[22m[2m Γöé gzip:     1.26 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources.DxASROgn.js                     [39m[1m[2m    2.56 kB[22m[1m[22m[2m Γöé gzip:     1.02 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/index3.Ywht679Z.js                        [39m[1m[2m    3.91 kB[22m[1m[22m[2m Γöé gzip:     1.92 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources.D2xTNFaU.js                     [39m[1m[2m    4.37 kB[22m[1m[22m[2m Γöé gzip:     1.38 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources3.B93GoPPA.js                    [39m[1m[2m    4.42 kB[22m[1m[22m[2m Γöé gzip:     1.29 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources8.BYBeJXDT.js                    [39m[1m[2m    4.54 kB[22m[1m[22m[2m Γöé gzip:     1.38 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PostMessageSchema.DxpKBg9U.js             [39m[1m[2m    7.08 kB[22m[1m[22m[2m Γöé gzip:     2.73 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/stegaEncodeSourceMap.C2p633t2.js          [39m[1m[2m    8.47 kB[22m[1m[22m[2m Γöé gzip:     3.49 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/LiveQueries.HL58pIkv.js                   [39m[1m[2m    8.54 kB[22m[1m[22m[2m Γöé gzip:     3.70 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/index.DB4Po_jQ.js                         [39m[1m[2m    8.60 kB[22m[1m[22m[2m Γöé gzip:     3.32 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/react.BPp8_CUI.js                         [39m[1m[2m    8.66 kB[22m[1m[22m[2m Γöé gzip:     3.25 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/browser.DGFY0RSf.js                       [39m[1m[2m   12.63 kB[22m[1m[22m[2m Γöé gzip:     5.00 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/QRCodeSVG.ClBsz2Hb.js                     [39m[1m[2m   14.69 kB[22m[1m[22m[2m Γöé gzip:     5.64 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources2.DGBwvEda.js                    [39m[1m[2m   15.03 kB[22m[1m[22m[2m Γöé gzip:     3.45 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/index.DPyTNidZ.js                         [39m[1m[2m   18.32 kB[22m[1m[22m[2m Γöé gzip:     6.05 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/index4.CXNOEgIz.js                        [39m[1m[2m   21.80 kB[22m[1m[22m[2m Γöé gzip:     8.96 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/resources7.DTakaAff.js                    [39m[1m[2m   24.77 kB[22m[1m[22m[2m Γöé gzip:     5.85 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/PresentationToolGrantsCheck.C-xlP-Hn.js   [39m[1m[2m  102.72 kB[22m[1m[22m[2m Γöé gzip:    34.68 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/client.C73kiKoU.js                        [39m[1m[2m  184.90 kB[22m[1m[22m[2m Γöé gzip:    57.81 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/SanityVision.BRXRmbRm.js                  [39m[1m[33m  604.32 kB[39m[22m[2m Γöé gzip:   202.97 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/VideoPlayer.fRaOOCNc.js                   [39m[1m[33m1,047.18 kB[39m[22m[2m Γöé gzip:   298.15 kB[22m
+[2m20:36:14[22m [34m[vite][39m [2mdist/client/[22m[36m_astro/studio-component.H6bt2Zck.js              [39m[1m[33m5,524.90 kB[39m[22m[2m Γöé gzip: 1,722.41 kB[22m
+[33m[1m20:36:14[22m [WARN] [vite][39m [33m
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.[39m
+[2m20:36:14[22m [34m[vite][39m [32mΓ£ô built in 53.47s[39m
+
+[42m[30m prerendering static routes [39m[49m
+node.exe : The default export of 
+@sanity/image-url has been deprecated. 
+Use the named export 
+`createImageUrlBuilder` instead.
+At line:1 char:1
++ & "C:\Program Files\nodejs/node.exe" 
+"C:\Users\sumit\AppData\Roaming\ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecifi 
+   ed: (The default exp...ilder` instea  
+  d.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeComm 
+   andError
+ 
+[2m20:36:15[22m [32mΓû╢[39m src/pages/about.astro
+Invalid URL
+  [1mStack trace:[22m
+[2m    at new URL 
+(node:internal/url:827:25)
+    at AstroComponentInstance.BaseLayout 
+[as factory] (file:///D:/AntiGravity%20Pr
+ojects/Swiftin%20Support/dist/server/chun
+ks/astro/server_CXYtMdzh.mjs:421:12)
+    at AstroComponentInstance.render (fil
+e:///D:/AntiGravity%20Projects/Swiftin%20
+Support/dist/server/chunks/astro/server_C
+XYtMdzh.mjs:1860:30)
+    at renderChild (file:///D:/AntiGravit
+y%20Projects/Swiftin%20Support/dist/serve
+r/chunks/astro/server_CXYtMdzh.mjs:1758:1
+8)
+    at new BufferedRenderer (file:///D:/A
+ntiGravity%20Projects/Swiftin%20Support/d
+ist/server/chunks/astro/server_CXYtMdzh.m
+js:1121:26)[22m
+[2m20:36:15[22m   [34mΓööΓöÇ[39m [2m/about/index.html[22m

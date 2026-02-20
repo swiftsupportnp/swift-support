@@ -1,0 +1,88 @@
+---
+export interface Props {
+    name: string;
+    description: string;
+    url: string;
+    image: string;
+    telephone: string;
+    email: string;
+    address: string;
+    openingHours: string;
+    priceRange: string;
+    latitude?: number;
+    longitude?: number;
+    socialLinks?: {
+        facebook?: string;
+        twitter?: string;
+        linkedin?: string;
+        instagram?: string;
+    };
+}
+
+const {
+    name,
+    description,
+    url,
+    image,
+    telephone,
+    email,
+    address,
+    openingHours = "Mo-Fr 09:00-18:00",
+    priceRange = "$$",
+    latitude,
+    longitude,
+    socialLinks,
+} = Astro.props;
+
+const sameAs = [
+    socialLinks?.facebook,
+    socialLinks?.twitter,
+    socialLinks?.linkedin,
+    socialLinks?.instagram,
+].filter(Boolean);
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService", // More specific than LocalBusiness
+    name: name,
+    description: description,
+    url: url,
+    image: image,
+    telephone: telephone,
+    email: email,
+    priceRange: priceRange,
+    address: {
+        "@type": "PostalAddress",
+        streetAddress: address,
+        addressLocality: "Kathmandu",
+        addressRegion: "Bagmati Province",
+        addressCountry: "NP",
+    },
+    openingHours: openingHours, // e.g. "Mo-Fr 09:00-18:00"
+    geo:
+        latitude && longitude
+            ? {
+                  "@type": "GeoCoordinates",
+                  latitude: latitude,
+                  longitude: longitude,
+              }
+            : undefined,
+    sameAs: sameAs.length > 0 ? sameAs : undefined,
+    areaServed: {
+        "@type": "Country",
+        name: "Nepal",
+    },
+    knowsAbout: [
+        "Business Consultation",
+        "Financial Advisory",
+        "Accounting and Bookkeeping",
+        "Tax and VAT Support",
+        "Events Management",
+        "Marketing and Branding",
+        "Project Management",
+        "Business Development",
+    ],
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(schema)} />
