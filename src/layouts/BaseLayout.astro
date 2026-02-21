@@ -4,6 +4,7 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LocalBusinessSchema from "../components/SEO/LocalBusinessSchema.astro";
 import GoogleAnalytics from "../components/Analytics/GoogleAnalytics.astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import { client } from "../lib/sanity";
 import { SITE_SETTINGS_QUERY } from "../lib/queries";
 
@@ -131,6 +132,7 @@ const logoUrl = settings?.logo?.asset?.url;
       <slot />
     </main>
     <Footer />
+    <SpeedInsights />
 
     <!-- WhatsApp Floating Button -->
     <a
